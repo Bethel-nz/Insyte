@@ -1,6 +1,13 @@
 {
-  "name": "insyte",
+  "name": "@/insyte",
+  "version": "0.0.1",
+  "description": "minimal analytics tool for tracking pageviews and page performance",
+  "homepage": "https://github.com/Bethel-nz/Insyte/blob/master/README.md",
+  "repository": {
+    "url": "https://github.com/Bethel-nz/Insyte"
+  },
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
@@ -19,5 +26,10 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "license": "MIT",
+  "author": "Bethel Nzekea",
+  "dependencies": {
+    "@upstash/redis": "^1.31.1"
   }
 }
