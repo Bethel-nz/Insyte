@@ -21,8 +21,7 @@
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.5",
-    "zod": "^3.23.8"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -30,6 +29,9 @@
   "license": "MIT",
   "author": "Bethel Nzekea",
   "dependencies": {
-    "@upstash/redis": "^1.31.1"
+    "@t3-oss/env-nextjs": "^0.10.1",
+    "@upstash/redis": "^1.31.1",
+    "date-fns": "^3.6.0",
+    "zod": "^3.23.8"
   }
 }
