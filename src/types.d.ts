@@ -23,3 +23,13 @@ type InsyteRetrieveResult = {
   date: string;
   event: Record<string, number>[];
 };
+
+interface MetricMsg {
+  metricName: string;
+  value: number;
+}
+
+interface Metric {
+  name: string;
+  value: number;
+}

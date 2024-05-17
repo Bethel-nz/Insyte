@@ -105,3 +105,46 @@ export default class Insyte {
     }
   }
 }
+
+/**
+usage: 
+import { NextRequest, NextResponse, userAgent } from 'next/server';
+import Insyte from '@/Insyte';
+
+const insyte = new Insyte();
+
+
+export default function middleware(req: NextRequest) {
+  const agent = userAgent(req);
+  if (
+    req.nextUrl.pathname.includes('/_next/static') ||
+    req.nextUrl.pathname === '/favicon.ico' ||
+    req.nextUrl.pathname.startsWith('/_next') ||
+    req.nextUrl.pathname.startsWith('api')
+  ) {
+    return NextResponse.next();
+  }
+  try {
+    insyte.track({
+      name: 'page-view',
+      event: {
+        page: req.nextUrl.pathname,
+        country: req.geo?.country,
+        device:
+          agent.device.type === 'mobile'
+            ? 'mobile'
+            : agent.device.type === 'undefined'
+            ? 'unknown'
+            : 'desktop',
+        os: agent.os.name,
+      },
+      persist: false,
+    });
+  } catch (error) {
+    console.error(error);
+  }
+
+  return NextResponse.next();
+}
+
+*/
